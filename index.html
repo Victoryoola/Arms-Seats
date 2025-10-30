@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Arms&Seat</title>
+        <link rel="shortcut icon" href='' type="image/x-icon">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Arms<span class="and">&</span>Seats</h1>
+                <i class="fa-solid fa-couch"></i>
+            </div>
+            <div class="navbar-links">
+                    <a href="#hero">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>               
+            </div>
+            <button class="cta" onclick="">Shop Now</button>
+            <!-- Cart toggle -->
+            <div class="cart">
+                <button id="cartToggle" class="cart-toggle" aria-haspopup="true" aria-expanded="false" title="Open cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartBadge" class="cart-badge" aria-live="polite">0</span>
+                </button>
+                <div id="cartDropdown" class="cart-dropdown" aria-label="Shopping cart" role="region">
+                    <div class="cart-header">
+                        <strong>Your Cart</strong>
+                        <button id="clearCart" class="clear-cart" title="Clear cart">Clear</button>
+                    </div>
+                    <ul id="cartItems" class="cart-items"></ul>
+                    <div class="cart-footer">
+                        <div class="cart-total">Total: <span id="cartTotal">NGN 0.00</span></div>
+                        <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="hero" class="hero-section">
+            <img src="heroImage.png" alt="heroImage">
+            <div class="hero-overlay">
+                <h2>Design Meets Comfort</h2>
+                <p>Premium furniture for homes and offices</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-img">
+                <img src="aboutImage.png" alt="about">
+            </div>
+            <div class="about-details">
+                <h2>Where Modern Design Meets Lasting Comfort</h2>
+                <p>At Arms&Seats, we believe furniture is more than decor — it's a lifestyle companion.</p>
+                <p>Every piece is crafted with attention to detail, premium materials, and a love for timeless design.</p>
+                <p>Whether it's a cozy sofa or a refined workspace chair, we make comfort look beautiful.</p>
+            </div>
+        </section>
+
+        <section id="products" class="product-section">
+            <div class="product-header">
+                <h2>Our Products</h2>
+                <p>Discover our range of comfortable and stylish furniture.</p>
+            </div>
+            <div class="product-body">
+                <div class="product-card">
+                    <img src="sofa.png" alt="product1">
+                    <h3>Modern Sofa</h3>
+                    <p>Experience ultimate comfort with our modern sofa.</p>
+                    <p class="price">NGN 700,000</p>
+                    <button class="addToCart" data-id="p1" data-price="700,000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="Chair.png" alt="product2">
+                    <h3>Ergonomic Chair</h3>
+                    <p>Perfect for long hours of work or gaming.</p>
+                    <p class="price">NGN 250,000</p>
+                    <button class="addToCart" data-id="p2" data-price="250,000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="recliner.png" alt="product3">
+                    <h3>Luxury Recliner</h3>
+                    <p>Relax in style with our luxury recliner.</p>
+                    <p class="price">NGN 500,000</p>
+                    <button class="addToCart" data-id="p3" data-price="500,000">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="wardrobe.png" alt="product4">
+                    <h3>Spacious Wardrobe</h3>
+                    <p>Keep your clothes organized with our spacious wardrobe.</p>
+                    <p class="price">NGN 120,000</p>
+                    <button class="addToCart" data-id="p4" data-price="120,000">Add to Cart</button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <footer>
+            <p>&copy; <script>document.write(new Date().getFullYear());</script> Arms&Seat. All rights reserved.</p>
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+         <script src="script.js"></script>
+    </body>
+</html>
