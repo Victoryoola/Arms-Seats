@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
     <body>
@@ -21,29 +22,34 @@
                     <a href="#products">Products</a>
                     <a href="#contact">Contact</a>               
             </div>
-            <button class="cta" onclick="">Shop Now</button>
-            <!-- Cart toggle -->
-            <div class="cart">
-                <button id="cartToggle" class="cart-toggle" aria-haspopup="true" aria-expanded="false" title="Open cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="cartBadge" class="cart-badge" aria-live="polite">0</span>
-                </button>
-                <div id="cartDropdown" class="cart-dropdown" aria-label="Shopping cart" role="region">
-                    <div class="cart-header">
-                        <strong>Your Cart</strong>
-                        <button id="clearCart" class="clear-cart" title="Clear cart">Clear</button>
-                    </div>
-                    <ul id="cartItems" class="cart-items"></ul>
-                    <div class="cart-footer">
-                        <div class="cart-total">Total: <span id="cartTotal">NGN 0.00</span></div>
-                        <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+            <div class="nav-actions">
+                <button class="cta">Shop Now</button>
+                <div class="cart-wrapper">
+                    <button id="cartBtn" class="cart-btn" aria-haspopup="true" aria-expanded="false" aria-controls="cartDropdown" title="Open cart" aria-label="Open cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount" class="cart-count">0</span>
+                    </button>
+                    <div id="cartDropdown" class="cart-dropdown" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+                        <div class="cart-header">
+                            <strong>Your Cart</strong>
+                            <button id="clearCart" class="clear-cart" title="Clear cart">Clear</button>
+                        </div>
+                        <div id="cartItems" class="cart-items">
+                            <!-- Items injected here -->
+                        </div>
+                        <div class="cart-footer">
+                            <div class="cart-total">Total: ₦<span id="cartTotal">0</span></div>
+                            <div class="cart-actions">
+                                <button id="checkoutBtn" class="checkout">Checkout</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <section id="hero" class="hero-section">
-            <img src="heroImage.png" alt="heroImage">
+            <img src="img/heroImage.png" alt="heroImage">
             <div class="hero-overlay">
                 <h2>Design Meets Comfort</h2>
                 <p>Premium furniture for homes and offices</p>
@@ -52,7 +58,7 @@
 
         <section id="about" class="about-section">
             <div class="about-img">
-                <img src="aboutImage.png" alt="about">
+                <img src="img/aboutImage.png" alt="about">
             </div>
             <div class="about-details">
                 <h2>Where Modern Design Meets Lasting Comfort</h2>
@@ -68,33 +74,33 @@
                 <p>Discover our range of comfortable and stylish furniture.</p>
             </div>
             <div class="product-body">
-                <div class="product-card">
-                    <img src="sofa.png" alt="product1">
+                <div class="product-card" data-id="sofa-1" data-name="Modern Sofa" data-price="380000">
+                    <img src="img/sofa.png" alt="product1">
                     <h3>Modern Sofa</h3>
                     <p>Experience ultimate comfort with our modern sofa.</p>
-                    <p class="price">NGN 700,000</p>
-                    <button class="addToCart" data-id="p1" data-price="700,000">Add to Cart</button>
+                    <p class="product-price">NGN 380,000</p>
+                    <button class="addToCart">Add to Cart</button>
                 </div>
-                <div class="product-card">
-                    <img src="Chair.png" alt="product2">
+                <div class="product-card" data-id="chair-1" data-name="Ergonomic Chair" data-price="95000">
+                    <img src="img/Chair.png" alt="product2">
                     <h3>Ergonomic Chair</h3>
                     <p>Perfect for long hours of work or gaming.</p>
-                    <p class="price">NGN 250,000</p>
-                    <button class="addToCart" data-id="p2" data-price="250,000">Add to Cart</button>
+                    <p class="product-price">NGN 95,000</p>
+                    <button class="addToCart">Add to Cart</button>
                 </div>
-                <div class="product-card">
-                    <img src="recliner.png" alt="product3">
+                <div class="product-card" data-id="recliner-1" data-name="Luxury Recliner" data-price="250000">
+                    <img src="img/recliner.png" alt="product3">
                     <h3>Luxury Recliner</h3>
                     <p>Relax in style with our luxury recliner.</p>
-                    <p class="price">NGN 500,000</p>
-                    <button class="addToCart" data-id="p3" data-price="500,000">Add to Cart</button>
+                    <p class="product-price">NGN 250,000</p>
+                    <button class="addToCart">Add to Cart</button>
                 </div>
-                <div class="product-card">
-                    <img src="wardrobe.png" alt="product4">
+                <div class="product-card" data-id="wardrobe-1" data-name="Spacious Wardrobe" data-price="150000">
+                    <img src="img/wardrobe.png" alt="product4">
                     <h3>Spacious Wardrobe</h3>
                     <p>Keep your clothes organized with our spacious wardrobe.</p>
-                    <p class="price">NGN 120,000</p>
-                    <button class="addToCart" data-id="p4" data-price="120,000">Add to Cart</button>
+                    <p class="product-price">NGN 150,000</p>
+                    <button class="addToCart">Add to Cart</button>
                 </div>
             </div>
 
@@ -114,6 +120,21 @@
         <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
             <i class="fas fa-arrow-up"></i>
         </button>
+
+        <!-- Checkout Modal -->
+        <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="checkoutTitle">
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-panel" role="document">
+                <h3 id="checkoutTitle">Checkout</h3>
+                <div id="checkoutSummary" class="checkout-summary">
+                    <!-- summary injected by JS -->
+                </div>
+                <div class="modal-actions">
+                    <button id="confirmCheckout" class="checkout">Confirm</button>
+                    <button id="cancelCheckout" class="clear-cart">Cancel</button>
+                </div>
+            </div>
+        </div>
 
         <footer>
             <p>&copy; <script>document.write(new Date().getFullYear());</script> Arms&Seat. All rights reserved.</p>

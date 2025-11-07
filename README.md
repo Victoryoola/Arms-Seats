@@ -1,3 +1,13 @@
-Arms&Seats is a furniture e-commerce website showcasing luxury furniture made from modern materials to your taste
-key features are smooth scrolling, hover effects, some Javascript interactive functionalities, form validation
-Tech Stack - HTML, CSS, JavaScript, Nano Banana (Image Generation)
+# Arms&Seats
+This is a furniture landing page built with HTML, CSS and Javascript
+This landing page shows furniture products with and add-to-cart functionality
+
+# Features
+Responsive icons
+Add-to-cart functionality
+
+# Tech Used
+HTML
+CSS
+JavaScript
+Sweet Alert
